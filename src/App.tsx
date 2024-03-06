@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header title="Awesome Music Store" />
     </>
   );
 }
