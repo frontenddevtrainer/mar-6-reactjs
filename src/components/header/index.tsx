@@ -1,10 +1,17 @@
-const Header = (props) => {
+// function abc(){}
+// const abc = function(){}
+// const abc = ()=>{}
 
-  const title = props.title
+// props = type of {}
+// Object Destructing
+
+const Header = ({ title, date }) => {
+
+  // const { title, date } = props;
 
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <h1 className="text-2xl">{title}</h1>
+      <h1 className="text-2xl">{title}: {date}</h1>
       <div className="flex items-center">
         <a href="#" className="mr-6">
           <span className="material-icons"> shopping_cart </span>
