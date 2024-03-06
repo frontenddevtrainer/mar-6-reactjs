@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Menu from "./menu";
 
 // function abc(){}
 // const abc = function(){}
@@ -16,9 +17,9 @@ const Header = ({ title, date, counterChange }) => {
     setShowMenu(!showMenu);
   };
 
-  const plusOneCounterClick = ()=>{
-    counterChange()
-  }
+  const plusOneCounterClick = () => {
+    counterChange();
+  };
 
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
@@ -32,8 +33,6 @@ const Header = ({ title, date, counterChange }) => {
           <span className="material-icons"> shopping_cart </span>
         </a>
 
-        
-
         <div className="relative inline-block text-left">
           <button type="button" className="inline-flex items-center">
             <span className="material-icons"> account_circle </span>
@@ -43,38 +42,7 @@ const Header = ({ title, date, counterChange }) => {
               arrow_drop_down{" "}
             </span>
           </button>
-          {showMenu && (
-            <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-              <div
-                className="py-1"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="options-menu"
-              >
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Your Profile
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Settings
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Sign out
-                </a>
-              </div>
-            </div>
-          )}
+          {showMenu && <Menu />}
         </div>
       </div>
     </header>

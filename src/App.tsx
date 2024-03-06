@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { useState } from "react";
+import Left from "./components/left";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -18,6 +19,7 @@ function App() {
         date={new Date().toISOString()}
       />
       <Footer counter={counter}/>
+      <Left/>
     </>
   );
 }
