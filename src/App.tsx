@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import { useState } from "react";
 import Left from "./components/left";
+import LoginForm from "./components/login-form";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -18,8 +19,9 @@ function App() {
         title="Awesome Music Store"
         date={new Date().toISOString()}
       />
-      <Footer counter={counter}/>
-      <Left/>
+      <LoginForm />
+      <Footer counter={counter} />
+      {/* <Left/> */}
     </>
   );
 }
