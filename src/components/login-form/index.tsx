@@ -8,14 +8,40 @@ const LoginForm = () => {
     sitename: "",
   });
 
+  const [isValid, setIsValid] = useState(null);
+
   const onLogin = () => {
     console.log(formState);
+  };
+
+  const validate = (formValue) => {
+    const errors = {};
+
+    if (formValue.email === "") {
+      errors["email"] = "Email is required";
+    }
+
+    if (!formValue.email.includes("@")) {
+      errors["email"] = "Email is not valid";
+    }
+
+    if (formValue.password === "") {
+      errors["password"] = "Password is required";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setIsValid(errors);
+    } else {
+      setIsValid(null);
+    }
   };
 
   const onChangeHandler = (e) => {
     const { name, value, checked, type } = e.target;
     const controlValue = type === "checkbox" ? checked : value;
-    setFormState({ ...formState, [name]: controlValue });
+    const formValue = { ...formState, [name]: controlValue };
+    setFormState(formValue);
+    validate(formValue);
   };
 
   return (
@@ -29,10 +55,12 @@ const LoginForm = () => {
         <label htmlFor="email">
           Email
           <input name="email" onChange={onChangeHandler} />
+          {isValid?.["email"] && <span className="text-red-600">{isValid?.["email"]}</span>}
         </label>
-        <label htmlFor="email">
+        <label htmlFor="password">
           Password
           <input type="password" name="password" onChange={onChangeHandler} />
+          {isValid?.["password"] && <span className="text-red-600">{isValid?.["password"]}</span>}
         </label>
         {/* <label htmlFor="email">
           Remember me
@@ -63,7 +91,7 @@ const LoginForm = () => {
           </select>
         </label> */}
       </p>
-      <button>Submit</button>
+      <button disabled={!!isValid}>Submit</button>
     </form>
   );
 };
