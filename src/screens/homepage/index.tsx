@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import AlbumList from "../../components/album-list";
+import { getAlbums } from "./api";
 
 const HomepageScreen = () => {
+  const [topAlbums, setTopAlbums] = useState(null);
+  const [latestAlbums, setLatestAlbums] = useState(null);
+
+  useEffect(() => {
+    const callApi = async () => {
+      const topAlbumsData = await getAlbums("top-albums");
+      const latestAlbumsData = await getAlbums("latest-albums");
+      setTopAlbums(topAlbumsData);
+      setLatestAlbums(latestAlbumsData);
+    };
+    callApi();
+  }, []);
+
   return (
     <>
       <section className="mb-12">
@@ -10,8 +25,8 @@ const HomepageScreen = () => {
           className="rounded w-full"
         />
       </section>
-      <AlbumList title="Top Albums"/>
-      <AlbumList title="Latest Albums"/>
+      <AlbumList list={topAlbums} title="Top Albums" />
+      <AlbumList list={latestAlbums} title="Latest Albums" />
     </>
   );
 };
