@@ -1,98 +1,60 @@
-import { useState } from "react";
+import yup from "yup";
+import { Formik } from "formik";
 
 const LoginForm = () => {
-  const [formState, setFormState] = useState({
-    email: "",
-    password: "",
-    remember_me: false,
-    sitename: "",
-  });
-
-  const [isValid, setIsValid] = useState(null);
-
-  const onLogin = () => {
-    console.log(formState);
-  };
-
-  const validate = (formValue) => {
-    const errors = {};
-
-    if (formValue.email === "") {
-      errors["email"] = "Email is required";
-    }
-
-    if (!formValue.email.includes("@")) {
-      errors["email"] = "Email is not valid";
-    }
-
-    if (formValue.password === "") {
-      errors["password"] = "Password is required";
-    }
-
-    if (Object.keys(errors).length > 0) {
-      setIsValid(errors);
-    } else {
-      setIsValid(null);
-    }
-  };
-
-  const onChangeHandler = (e) => {
-    const { name, value, checked, type } = e.target;
-    const controlValue = type === "checkbox" ? checked : value;
-    const formValue = { ...formState, [name]: controlValue };
-    setFormState(formValue);
-    validate(formValue);
-  };
-
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        onLogin();
+    <Formik
+      onSubmit={(values) => {
+        console.log(values);
       }}
+      initialValues={{}}
     >
-      <p>
-        <label htmlFor="email">
-          Email
-          <input name="email" onChange={onChangeHandler} />
-          {isValid?.["email"] && <span className="text-red-600">{isValid?.["email"]}</span>}
-        </label>
-        <label htmlFor="password">
-          Password
-          <input type="password" name="password" onChange={onChangeHandler} />
-          {isValid?.["password"] && <span className="text-red-600">{isValid?.["password"]}</span>}
-        </label>
-        {/* <label htmlFor="email">
-          Remember me
-          <input
-            type="checkbox"
-            name="remember_me"
-            onChange={onChangeHandler}
-          />
-        </label> */}
-        {/* <label htmlFor="email">
-          Sitename edureka.co
-          <input
-            type="radio"
-            onChange={onChangeHandler}
-            name="sitename"
-            value="edureka.co"
-          />
-          edureka.in
-          <input
-            type="radio"
-            onChange={onChangeHandler}
-            name="sitename"
-            value="edureka.in"
-          />
-          <select onChange={onChangeHandler} name="sitename">
-            <option value="edureka.co">edureka.co</option>
-            <option value="edureka.in">edureka.in</option>
-          </select>
-        </label> */}
-      </p>
-      <button disabled={!!isValid}>Submit</button>
-    </form>
+      {({ handleSubmit, handleChange, handleBlur }) => {
+        return (
+          <div className="bg-gray-800 p-10 w-96 rounded-lg">
+            <h1 className="text-3xl font-bold mb-6">Login</h1>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="mb-4">
+                <label className="block text-lg font-medium">Email</label>
+                <input
+                  type="email"
+                  className="bg-gray-700 text-white rounded px-6 py-3 w-full"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-lg font-medium">Password</label>
+                <input
+                  type="password"
+                  className="bg-gray-700 text-white rounded px-6 py-3 w-full"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </div>
+
+              <button type="submit" className="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full">
+                Login
+              </button>
+            </form>
+            <p className="mt-4 text-center">
+              Don't have an account?{" "}
+              <a
+                href="./register.html"
+                className="text-green-400 hover:underline"
+              >
+                Register
+              </a>
+            </p>
+          </div>
+        );
+      }}
+    </Formik>
   );
 };
 
