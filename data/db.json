@@ -1,0 +1,134 @@
+{
+    "people": [
+      { "id": 1, "name": "abc" },
+      { "id": 2, "name": "def" },
+      { "id": 3, "name": "xyz" }
+    ],
+    "albums": [
+      {
+        "name": "Music 606 Updated 1500",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 250,
+        "singers": ["Singer J", "Singer K"],
+        "songs": [
+          {
+            "duration": 320,
+            "name": "Mystical Journey",
+            "singer": ["Singer J"]
+          },
+          {
+            "duration": 285,
+            "name": "Sunrise Serenade",
+            "singer": ["Singer J", "Singer K"]
+          },
+          {
+            "duration": 300,
+            "name": "Moonlight Whisper",
+            "singer": ["Singer K"]
+          },
+          {
+            "duration": 275,
+            "name": "Eternal Harmony",
+            "singer": ["Singer J"]
+          },
+          {
+            "duration": 350,
+            "name": "Rhythmic Tales",
+            "singer": ["Singer K"]
+          }
+        ],
+        "id": 6,
+        "tags": "top"
+      },
+      {
+        "name": "Music 101",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 100,
+        "singers": ["Singer A", "Singer B"],
+        "songs": [
+          {
+            "duration": 430,
+            "name": "Awesome Song",
+            "singer": ["Singer A"]
+          }
+        ],
+        "isPurchasedByUser": true,
+        "id": 1,
+        "tags": "latest"
+      },
+      {
+        "name": "Music 202",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 200,
+        "singers": ["Singer C", "Singer D"],
+        "songs": [
+          {
+            "duration": 600,
+            "name": "Great Song",
+            "singer": ["Singer C"]
+          }
+        ],
+        "newRelesedDate": "2023-10-08T16:13:46.338Z",
+        "id": 2,
+        "tags": "top"
+      },
+      {
+        "name": "Music 303",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 200000,
+        "singers": ["Singer D", "Singer E"],
+        "songs": [
+          {
+            "duration": 549,
+            "name": "Great Song",
+            "singer": ["Singer C"]
+          }
+        ],
+        "id": 3,
+        "tags": "top"
+      },
+      {
+        "name": "Music 404",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 300,
+        "singers": ["Singer F", "Singer G"],
+        "songs": [
+          {
+            "duration": 500,
+            "name": "Fantastic Song",
+            "singer": ["Singer F"]
+          }
+        ],
+        "newRelesedDate": "2023-11-08T16:13:46.338Z",
+        "id": 4,
+        "tags": "latest"
+      },
+      {
+        "name": "Music 505",
+        "albumArt": {
+          "thumbnail": "https://via.placeholder.com/150"
+        },
+        "price": 400,
+        "singers": ["Singer H", "Singer I"],
+        "songs": [
+          {
+            "duration": 480,
+            "name": "Amazing Song",
+            "singer": ["Singer H"]
+          }
+        ],
+        "id": 5,
+        "tags": "bollywood"
+      }
+    ]
+  }

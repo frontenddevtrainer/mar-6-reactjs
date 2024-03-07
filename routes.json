@@ -1,0 +1,5 @@
+{
+    "/top-albums": "/albums?tags=top",
+    "/latest-albums": "/albums?tags=latest",
+    "/bollywood-albums": "/albums?tags=bollywood"
+  }

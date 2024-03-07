@@ -6,6 +6,7 @@ import LoginForm from "./components/login-form";
 import { Route, Routes } from "react-router-dom";
 import HomepageScreen from "./screens/homepage";
 import LoginpageScreen from "./screens/loginpage";
+import ErrorpageScreen from "./screens/errorpage";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -16,17 +17,15 @@ function App() {
 
   return (
     <>
-      <Header
-        counterChange={counterOnePlus}
-        title="Awesome Music Store"
-        date={new Date().toISOString()}
-      />
-      <Routes>
-        <Route path="/" element={<HomepageScreen/>} />
-        <Route path="/login" element={<LoginpageScreen/>} />
-      </Routes>
-
-      <Footer counter={counter} />
+      <Header title="Awesome Music Store" />
+      <main className="container mx-auto p-8">
+        <Routes>
+          <Route path="/" element={<HomepageScreen />} />
+          <Route path="/login" element={<LoginpageScreen />} />
+          <Route path="*" element={<ErrorpageScreen />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }
