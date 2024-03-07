@@ -2,8 +2,10 @@ import "./App.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { useState } from "react";
-import Left from "./components/left";
 import LoginForm from "./components/login-form";
+import { Route, Routes } from "react-router-dom";
+import HomepageScreen from "./screens/homepage";
+import LoginpageScreen from "./screens/loginpage";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -19,9 +21,12 @@ function App() {
         title="Awesome Music Store"
         date={new Date().toISOString()}
       />
-      <LoginForm />
+      <Routes>
+        <Route path="/" element={<HomepageScreen/>} />
+        <Route path="/login" element={<LoginpageScreen/>} />
+      </Routes>
+
       <Footer counter={counter} />
-      {/* <Left/> */}
     </>
   );
 }

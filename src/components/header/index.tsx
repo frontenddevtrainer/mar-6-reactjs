@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Menu from "./menu";
+import { Link } from "react-router-dom";
 
 // function abc(){}
 // const abc = function(){}
@@ -8,7 +9,7 @@ import Menu from "./menu";
 // props = type of {}
 // Object Destructing
 
-const Header = ({ title, date, counterChange }) => {
+const Header = ({ title }) => {
   // const { title, date } = props;
 
   const [showMenu, setShowMenu] = useState(false);
@@ -17,17 +18,12 @@ const Header = ({ title, date, counterChange }) => {
     setShowMenu(!showMenu);
   };
 
-  const plusOneCounterClick = () => {
-    counterChange();
-  };
-
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
       <h1 className="text-2xl">
-        {title}: {date}
+        <Link to="/">{title}</Link>
       </h1>
 
-      <span onClick={plusOneCounterClick}>+1</span>
       <div className="flex items-center">
         <a href="#" className="mr-6">
           <span className="material-icons"> shopping_cart </span>
