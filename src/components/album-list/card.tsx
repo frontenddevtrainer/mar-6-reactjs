@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../store/slices/cart"
 
 const AlbumCard = ({ album }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="bg-gray-800 p-4 rounded relative">
       <div className="relative">
@@ -28,7 +32,14 @@ const AlbumCard = ({ album }) => {
           className="inline-flex items-center text-green-400 hover:text-green-300"
         >
           <span className="material-icons"> shopping_cart </span>
-          <span className="ml-1">Add to Cart</span>
+          <span
+            onClick={() => {
+              dispatch(addToCart(album));
+            }}
+            className="ml-1"
+          >
+            Add to Cart
+          </span>
         </a>
       </div>
     </div>
