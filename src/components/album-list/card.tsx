@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AlbumCard = ({ album }) => {
   return (
     <div className="bg-gray-800 p-4 rounded relative">
@@ -13,7 +15,9 @@ const AlbumCard = ({ album }) => {
       </div>
 
       <div className="text-left">
-        <h3 className="text-md font-bold mb-1">{album.name}</h3>
+        <h3 className="text-md font-bold mb-1">
+          <Link to={`/albums/${album.id}`}>{album.name}</Link>
+        </h3>
         <p className="text-sm mb-2 text-gray-400">
           By {album.singers.join(", ")}
         </p>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AlbumList from "../../components/album-list";
-import { getAlbums } from "./api";
+import { getAlbums } from "../../model/albums/api";
 
 const HomepageScreen = () => {
   const [topAlbums, setTopAlbums] = useState(null);
