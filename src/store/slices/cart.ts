@@ -9,7 +9,13 @@ export const CartSlice = createSlice({
     addToCart: (state, { payload }) => {
       state.items.push(payload);
     },
-    removeFromCart: (state, action) => {},
+    // payload id = 1
+    removeFromCart: (state, { payload }) => {
+        state.items = state.items.filter((item)=>{
+            return item.id !== payload.id
+        });
+    },
+    
   },
 });
 

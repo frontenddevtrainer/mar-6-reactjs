@@ -27,8 +27,7 @@ const AlbumCard = ({ album }) => {
         </p>
         <p className="text-sm mb-2 text-green-200">${album.price}</p>
 
-        <a
-          href="#"
+        <span
           className="inline-flex items-center text-green-400 hover:text-green-300"
         >
           <span className="material-icons"> shopping_cart </span>
@@ -40,7 +39,7 @@ const AlbumCard = ({ album }) => {
           >
             Add to Cart
           </span>
-        </a>
+        </span>
       </div>
     </div>
   );

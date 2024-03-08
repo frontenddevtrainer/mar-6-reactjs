@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Menu from "./menu";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // function abc(){}
 // const abc = function(){}
@@ -14,6 +15,10 @@ const Header = ({ title }) => {
 
   const [showMenu, setShowMenu] = useState(false);
 
+  const cartItems = useSelector((state) => {
+    return state?.cart?.items;
+  });
+
   const menuClickHandler = () => {
     setShowMenu(!showMenu);
   };
@@ -25,9 +30,10 @@ const Header = ({ title }) => {
       </h1>
 
       <div className="flex items-center">
-        <a href="#" className="mr-6">
+        <Link to="/cart" className="mr-6">
           <span className="material-icons"> shopping_cart </span>
-        </a>
+          {cartItems.length}
+        </Link>
 
         <div className="relative inline-block text-left">
           <button type="button" className="inline-flex items-center">
