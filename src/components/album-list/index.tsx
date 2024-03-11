@@ -1,6 +1,12 @@
+import { Album } from "../../interfaces/Album";
 import AlbumCard from "./card";
 
-const AlbumList = ({ title, list }) => {
+interface props {
+  title : string,
+  list: null | Album[]
+}
+
+const AlbumList = ({ title, list }: props) => {
   return (
     <section className="mb-12">
       <h2 className="text-3xl text-green-400 mb-4">{title}</h2>

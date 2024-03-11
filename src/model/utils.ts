@@ -1,4 +1,4 @@
-const responseHandler = async (response)=>{
+const responseHandler = async (response: Response)=>{
     if (response.ok) {
         const json = await response.json();
         return json;

@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../store/slices/cart";
+import { Album } from "../../interfaces/Album";
 
 const CartpageScreen = () => {
   const dispatch = useDispatch();
 
-  const cartItems = useSelector((state) => {
+  const cartItems = useSelector((state: { cart: { items: Album[] } }) => {
     return state?.cart?.items;
   });
 
@@ -14,7 +15,7 @@ const CartpageScreen = () => {
 
       <div className="divide-y divide-gray-700">
         {cartItems.length > 0 &&
-          cartItems.map((album) => {
+          cartItems.map((album: Album) => {
             return (
               <div className="py-4 flex items-center justify-between">
                 <div className="flex items-center space-x-4">
@@ -33,7 +34,7 @@ const CartpageScreen = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    dispatch(removeFromCart(album))
+                    dispatch(removeFromCart(album));
                   }}
                   className="text-red-400 hover:text-red-300 material-icons"
                 >

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import AlbumList from "../../components/album-list";
 import { getAlbums } from "../../model/albums/api";
+import { Album } from "../../interfaces/Album";
 
 const HomepageScreen = () => {
-  const [topAlbums, setTopAlbums] = useState(null);
-  const [latestAlbums, setLatestAlbums] = useState(null);
+  const [topAlbums, setTopAlbums] = useState<null | Album[]>(null);
+  const [latestAlbums, setLatestAlbums] = useState<null | Album[]>(null);
 
   useEffect(() => {
     const callApi = async () => {

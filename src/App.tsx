@@ -1,8 +1,6 @@
 import "./App.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import { useState } from "react";
-import LoginForm from "./components/login-form";
 import { Route, Routes } from "react-router-dom";
 import HomepageScreen from "./screens/homepage";
 import LoginpageScreen from "./screens/loginpage";
@@ -11,7 +9,6 @@ import AlbumDetailpageScreen from "./screens/album-detail-page";
 import CartpageScreen from "./screens/cartpage";
 
 function App() {
-
   return (
     <>
       <Header title="Awesome Music Store" />
@@ -21,7 +18,7 @@ function App() {
           <Route path="/albums/:id" element={<AlbumDetailpageScreen />} />
           <Route path="/login" element={<LoginpageScreen />} />
           <Route path="/cart" element={<CartpageScreen />} />
-          <Route path="/404" element={<ErrorpageScreen show="404"/>} />
+          <Route path="/404" element={<ErrorpageScreen show={"404"} />} />
           <Route path="*" element={<ErrorpageScreen />} />
         </Routes>
       </main>

@@ -1,15 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Album } from "../../interfaces/Album";
+
+const initialState: { items: Album[] } = {
+  items: []
+}
 
 export const CartSlice = createSlice({
   name: "Cart",
-  initialState: {
-    items: [],
-  },
+  initialState: initialState,
   reducers: {
     addToCart: (state, { payload }) => {
       state.items.push(payload);
     },
-    // payload id = 1
     removeFromCart: (state, { payload }) => {
         state.items = state.items.filter((item)=>{
             return item.id !== payload.id

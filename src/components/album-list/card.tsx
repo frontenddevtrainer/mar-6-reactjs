@@ -1,8 +1,13 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../../store/slices/cart"
+import { addToCart } from "../../store/slices/cart";
+import { Album } from "../../interfaces/Album";
 
-const AlbumCard = ({ album }) => {
+interface props {
+  album: Album;
+}
+
+const AlbumCard = ({ album }: props) => {
   const dispatch = useDispatch();
 
   return (
@@ -27,9 +32,7 @@ const AlbumCard = ({ album }) => {
         </p>
         <p className="text-sm mb-2 text-green-200">${album.price}</p>
 
-        <span
-          className="inline-flex items-center text-green-400 hover:text-green-300"
-        >
+        <span className="inline-flex items-center text-green-400 hover:text-green-300">
           <span className="material-icons"> shopping_cart </span>
           <span
             onClick={() => {
