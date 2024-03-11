@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../store/slices/cart";
 import { Album } from "../../interfaces/Album";
+import { useContext } from "react";
+import { ThemeContext, ThemeOptions } from "../../context/theme";
 
 interface props {
   album: Album;
@@ -10,8 +12,11 @@ interface props {
 const AlbumCard = ({ album }: props) => {
   const dispatch = useDispatch();
 
+  const { theme } = useContext(ThemeContext);
+  const bgCard = theme === ThemeOptions.dark ? "bg-gray-800" : "bg-gray-200"
+
   return (
-    <div className="bg-gray-800 p-4 rounded relative">
+    <div className={`${bgCard} p-4 rounded relative`}>
       <div className="relative">
         <img
           src="https://via.placeholder.com/150"
