@@ -1,12 +1,9 @@
 import { call, takeEvery, put } from "redux-saga/effects";
+import axios from "axios";
 
 // worker function
 function getTodos() {
-  return fetch("https://jsonplaceholder.typicode.com/todos").then(
-    (response) => {
-      return response.json();
-    }
-  );
+  return axios("https://jsonplaceholder.typicode.com/todos", { method: "GET" });
 }
 
 // Worker saga
@@ -24,12 +21,12 @@ export function* saga() {
   yield takeEvery("GET_TODOS", fetchTodosSaga);
 }
 
-// useDispatch > 
-// sagas > 
-// worker saga > 
-// worker function (async tasks) > 
-// work saga > 
-// put action() > 
-// reducer > 
-// updates store > 
+// useDispatch >
+// sagas >
+// worker saga >
+// worker function (async tasks) >
+// work saga >
+// put action() >
+// reducer >
+// updates store >
 // useSelector
