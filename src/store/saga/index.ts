@@ -1,7 +1,7 @@
 import { call, takeEvery, put } from "redux-saga/effects";
 
+// worker function
 function getTodos() {
-  console.log("fetchTodos");
   return fetch("https://jsonplaceholder.typicode.com/todos").then(
     (response) => {
       return response.json();
@@ -9,6 +9,7 @@ function getTodos() {
   );
 }
 
+// Worker saga
 function* fetchTodosSaga() {
   try {
     const data = yield call(getTodos);
@@ -18,6 +19,17 @@ function* fetchTodosSaga() {
   }
 }
 
+// sagas
 export function* saga() {
   yield takeEvery("GET_TODOS", fetchTodosSaga);
 }
+
+// useDispatch > 
+// sagas > 
+// worker saga > 
+// worker function (async tasks) > 
+// work saga > 
+// put action() > 
+// reducer > 
+// updates store > 
+// useSelector
