@@ -6,23 +6,26 @@ import Carousel from "react-bootstrap/Carousel";
 import "./homepage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodos } from "../../store/actions/todos";
+import { useAlbumsListing } from "../../hooks/useAlbumsListing";
 
 const HomepageScreen = () => {
-  const [topAlbums, setTopAlbums] = useState<null | Album[]>(null);
-  const [latestAlbums, setLatestAlbums] = useState<null | Album[]>(null);
+
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const callApi = async () => {
-      const topAlbumsData = await getAlbums("top-albums");
-      const latestAlbumsData = await getAlbums("latest-albums");
-      setTopAlbums(topAlbumsData);
-      setLatestAlbums(latestAlbumsData);
-    };
-    callApi();
+  const { data : topAlbums } = useAlbumsListing("top-albums");
+  const { data : latestAlbums } = useAlbumsListing("latest-albums");
 
-    dispatch(fetchTodos());
-  }, []);
+  // useEffect(() => {
+  //   const callApi = async () => {
+  //     const topAlbumsData = await getAlbums("top-albums");
+  //     const latestAlbumsData = await getAlbums("latest-albums");
+  //     setTopAlbums(topAlbumsData);
+  //     setLatestAlbums(latestAlbumsData);
+  //   };
+  //   callApi();
+
+  //   dispatch(fetchTodos());
+  // }, []);
 
   const todos = useSelector((state: any) => {
     return state?.todos?.todos;

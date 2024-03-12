@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Menu from "./menu";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Album } from "../../interfaces/Album";
-import { ThemeContext, ThemeOptions } from "../../context/theme";
+import { ThemeOptions } from "../../context/theme";
+import { useTheme } from "../../hooks/useTheme";
 
 interface props {
   title: string;
@@ -18,7 +19,7 @@ interface reduxstate {
 const Header = ({ title }: props) => {
   // const { title, date } = props;
 
-  const { theme, change } = useContext(ThemeContext);
+  const { theme, change } = useTheme()
   const bgHeader = theme === ThemeOptions.dark ? "bg-gray-800 text-white" : "bg-gray-200 text-black"
 
   const [showMenu, setShowMenu] = useState(false);
