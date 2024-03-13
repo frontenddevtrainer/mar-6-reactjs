@@ -1,17 +1,25 @@
-import { useEffect, useState } from "react";
 import AlbumList from "../../components/album-list";
-import { getAlbums } from "../../model/albums/api";
-import { Album } from "../../interfaces/Album";
 import Carousel from "react-bootstrap/Carousel";
 import "./homepage.scss";
-import { useDispatch, useSelector } from "react-redux";
 import { useAlbumsListing } from "../../hooks/useAlbumsListing";
 
+import { gql, useQuery } from "@apollo/client";
+
+const GET_USER_QUERY = gql`
+  query GetUserQuery {
+    users {
+      name
+      username
+      id
+    }
+  }
+`;
+
 const HomepageScreen = () => {
+  const { data: topAlbums } = useAlbumsListing("top-albums");
+  const { data: latestAlbums } = useAlbumsListing("latest-albums");
 
-
-  const { data : topAlbums  } = useAlbumsListing("top-albums");
-  const { data : latestAlbums } = useAlbumsListing("latest-albums");
+  const { loading, data } = useQuery<{ users: any[] }>(GET_USER_QUERY);
 
   return (
     <>
@@ -54,6 +62,14 @@ const HomepageScreen = () => {
           </Carousel.Item>
         </Carousel>
       </section>
+      <ul>
+        {data &&
+          data?.users &&
+          data?.users.length > 0 &&
+          data?.users.map((user: any) => {
+            return <li key={user.id}>{user.name}, {user.username}</li>;
+          })}
+      </ul>
       <AlbumList list={topAlbums} title="Top Albums" />
       <AlbumList list={latestAlbums} title="Latest Albums" />
     </>
