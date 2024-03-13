@@ -3,7 +3,8 @@ import Carousel from "react-bootstrap/Carousel";
 import "./homepage.scss";
 import { useAlbumsListing } from "../../hooks/useAlbumsListing";
 
-import { gql, useQuery } from "@apollo/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
+import { useEffect } from "react";
 
 const GET_USER_QUERY = gql`
   query GetUserQuery {
@@ -15,11 +16,35 @@ const GET_USER_QUERY = gql`
   }
 `;
 
+const ADD_USER_MUTATION = gql`
+  mutation AddUser($user: UserInput) {
+    addUser(user: $user) {
+      id
+    }
+  }
+`;
+
 const HomepageScreen = () => {
   const { data: topAlbums } = useAlbumsListing("top-albums");
   const { data: latestAlbums } = useAlbumsListing("latest-albums");
 
   const { loading, data } = useQuery<{ users: any[] }>(GET_USER_QUERY);
+
+  const [addUser, { data: mutationData }] = useMutation(ADD_USER_MUTATION, {
+    variables: {
+      user: {
+        email: "1@example.com",
+        name: "1@example.com",
+        phone: "1@example.com",
+        username: "1@example.com",
+        website: "1@example.com",
+      },
+    },
+  });
+
+  useEffect(() => {
+    addUser();
+  }, []);
 
   return (
     <>
@@ -67,7 +92,11 @@ const HomepageScreen = () => {
           data?.users &&
           data?.users.length > 0 &&
           data?.users.map((user: any) => {
-            return <li key={user.id}>{user.name}, {user.username}</li>;
+            return (
+              <li key={user.id}>
+                {user.name}, {user.username}
+              </li>
+            );
           })}
       </ul>
       <AlbumList list={topAlbums} title="Top Albums" />
