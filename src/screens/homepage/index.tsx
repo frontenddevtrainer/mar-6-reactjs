@@ -5,6 +5,7 @@ import { useAlbumsListing } from "../../hooks/useAlbumsListing";
 
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { useEffect } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const GET_USER_QUERY = gql`
   query GetUserQuery {
@@ -87,6 +88,30 @@ const HomepageScreen = () => {
           </Carousel.Item>
         </Carousel>
       </section>
+
+      <div className="p-10 bg-slate-600 flex justify-between">
+        <div className="w-1/3 p-4 bg-orange-400">
+          <Link to={"/content1"} className="p-2 bg-cyan-300 w-full block">
+            Link 1
+          </Link>
+          <Link to={"/content2"} className="p-2 bg-cyan-300 w-full block">
+            Link 2
+          </Link>
+          <Link to={"/content3"} className="p-2 bg-cyan-300 w-full block">
+            Link 3
+          </Link>
+          <Link to={"/content4"} className="p-2 bg-cyan-300 w-full block">
+            Link 4
+          </Link>
+          <Link to={"/content5"} className="p-2 bg-cyan-300 w-full block">
+            Link 5
+          </Link>
+        </div>
+        <div className="w-2/3 p-4 bg-yellow-500">
+          <Outlet />
+        </div>
+      </div>
+
       <ul>
         {data &&
           data?.users &&

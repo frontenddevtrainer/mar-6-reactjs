@@ -10,6 +10,10 @@ import CartpageScreen from "./screens/cartpage";
 import { useContext } from "react";
 import { ThemeContext, ThemeOptions } from "./context/theme";
 
+function Content({ title }: { title: string }) {
+  return <div>{title}</div>;
+}
+
 function App() {
   const { theme } = useContext(ThemeContext);
 
@@ -23,7 +27,14 @@ function App() {
       <Header title="Awesome Music Store" />
       <main className={`container mx-auto p-0 ${bgTextColor}`}>
         <Routes>
-          <Route path="/" element={<HomepageScreen />} />
+          <Route path="/" element={<HomepageScreen />}>
+            <Route path="/content1" element={<Content title="Content 1" />} />
+            <Route path="/content2" element={<Content title="Content 2" />} />
+            <Route path="/content3" element={<Content title="Content 3" />} />
+            <Route path="/content4" element={<Content title="Content 4" />} />
+            <Route path="/content5" element={<Content title="Content 5" />} />
+          </Route>
+
           <Route path="/albums/:id" element={<AlbumDetailpageScreen />} />
           <Route path="/login" element={<LoginpageScreen />} />
           <Route path="/cart" element={<CartpageScreen />} />
