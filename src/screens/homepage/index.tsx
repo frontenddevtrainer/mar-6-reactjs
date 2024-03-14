@@ -28,9 +28,9 @@ const HomepageScreen = () => {
   const { data: topAlbums } = useAlbumsListing("top-albums");
   const { data: latestAlbums } = useAlbumsListing("latest-albums");
 
-  const { loading, data } = useQuery<{ users: any[] }>(GET_USER_QUERY);
+  const { data } = useQuery<{ users: any[] }>(GET_USER_QUERY);
 
-  const [addUser, { data: mutationData }] = useMutation(ADD_USER_MUTATION, {
+  const [addUser] = useMutation(ADD_USER_MUTATION, {
     variables: {
       user: {
         email: "1@example.com",

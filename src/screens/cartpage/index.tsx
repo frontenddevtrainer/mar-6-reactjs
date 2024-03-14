@@ -79,7 +79,7 @@ const CartpageScreen = () => {
         <button
           disabled={cart.order.loading}
           onClick={() => {
-            dispatch(placeOrder(cart.items));
+            dispatch(placeOrder() as any);
             navigate("/")
           }}
           className="bg-green-400 text-white px-8 py-3 rounded hover:bg-green-300 w-full"
