@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710521982999" clover="3.2.0">
-  <project timestamp="1710521982999" name="All files">
-    <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2" elements="9" coveredelements="9" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
-    <file name="demo.tsx" path="/Users/trainer/mar-6-reactjs/src/components/demo/demo.tsx">
+<coverage generated="1710523634689" clover="3.2.0">
+  <project timestamp="1710523634689" name="All files">
+    <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="7" elements="36" coveredelements="35" complexity="0" loc="24" ncloc="24" packages="4" files="4" classes="4"/>
+    <package name="components.demo">
       <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="4" count="5" type="stmt"/>
-      <line num="6" count="5" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-    </file>
+      <file name="demo.tsx" path="/Users/trainer/mar-6-reactjs/src/components/demo/demo.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="context">
+      <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <file name="theme.tsx" path="/Users/trainer/mar-6-reactjs/src/context/theme.tsx">
+        <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="useTheme.ts" path="/Users/trainer/mar-6-reactjs/src/hooks/useTheme.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="lowercase.ts" path="/Users/trainer/mar-6-reactjs/src/utils/lowercase.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
