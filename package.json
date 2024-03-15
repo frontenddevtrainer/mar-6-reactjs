@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "dev:api": "json-server ./data/db.json --watch -r routes.json --delay 500",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@apollo/client": "^3.9.6",

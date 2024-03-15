@@ -1,5 +1,7 @@
-const Demo = ()=>{
-    return <div>hello world!!!</div>
+const Demo = ({ message = "hello world!!!" })=>{
+    return <div>{message}
+            <button>Click</button>
+        </div>
 }
 
 export default Demo
