@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710523634689" clover="3.2.0">
-  <project timestamp="1710523634689" name="All files">
-    <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="7" elements="36" coveredelements="35" complexity="0" loc="24" ncloc="24" packages="4" files="4" classes="4"/>
+<coverage generated="1710525214800" clover="3.2.0">
+  <project timestamp="1710525214800" name="All files">
+    <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8" elements="36" coveredelements="36" complexity="0" loc="24" ncloc="24" packages="4" files="4" classes="4"/>
     <package name="components.demo">
       <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="demo.tsx" path="/Users/trainer/mar-6-reactjs/src/components/demo/demo.tsx">
@@ -15,9 +15,9 @@
       </file>
     </package>
     <package name="context">
-      <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
       <file name="theme.tsx" path="/Users/trainer/mar-6-reactjs/src/context/theme.tsx">
-        <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <metrics statements="11" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="4" count="1" type="stmt"/>
@@ -25,10 +25,10 @@
         <line num="13" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
       </file>
     </package>
     <package name="hooks">
@@ -38,8 +38,8 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
     </package>
     <package name="utils">
