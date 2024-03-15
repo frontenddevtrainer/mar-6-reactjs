@@ -1,7 +1,21 @@
-const Demo = ({ message = "hello world!!!" })=>{
-    return <div>{message}
-            <button>Click</button>
-        </div>
-}
+import { useState } from "react";
 
-export default Demo
+const Demo = ({ message = "hello world!!!" }) => {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <div>
+      {message}
+      <p>Counter: {counter}</p>
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+      >
+        Click
+      </button>
+    </div>
+  );
+};
+
+export default Demo;

@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event"
 import Demo from "../components/demo/demo"
 
 describe("Demo Component", ()=>{
@@ -23,6 +24,15 @@ describe("Demo Component", ()=>{
     expect(button.textContent).toBe("Click")
     expect(text).toBeTruthy();
   });
+
+  test("Counter update", async ()=>{
+    render(<Demo message="React Learning"/>);
+    screen.getByText("Counter: 0") 
+    const button = screen.getByRole("button")
+    await userEvent.click(button);
+    screen.getByText("Counter: 1") 
+
+  })
 
 
   
